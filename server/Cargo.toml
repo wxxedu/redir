@@ -4,6 +4,7 @@ members = [
   "models",
   "server",
   "database",
-  "auth"
+  "auth",
+  "config"
 ]
 

@@ -24,6 +24,7 @@ diesel::table! {
         username -> Text,
         password -> Text,
         created_at -> Timestamp,
+        salt -> Text,
     }
 }
 
