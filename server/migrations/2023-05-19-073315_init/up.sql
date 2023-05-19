@@ -1,0 +1,26 @@
+-- Your SQL goes here
+CREATE TABLE urls (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  url VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  num_accesses INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE UNIQUE INDEX url_idx ON urls (url);
+
+CREATE TABLE accesses (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  url_id INTEGER NOT NULL,
+  accessed_at TIMESTAMP NOT NULL,
+  ip VARCHAR(255) NOT NULL,
+  FOREIGN KEY (url_id) REFERENCES urls(id)
+);
+
+CREATE INDEX url_id_idx ON accesses (url_id);
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL
+);
