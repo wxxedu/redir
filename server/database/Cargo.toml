@@ -6,4 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-diesel = { version = "2.0.4", features = ["sqlite"] }
+proc = { path = "../proc" }
+chrono = { version = "0.4.24", features = ["serde"] }
+diesel = { version = "2.0.4", features = ["sqlite", "chrono"] }
+serde = { version = "1.0.163", features = ["derive"] }
+config = { path = "../config" }
+rand = "0.8.5"
+bcrypt = "0.14.0"
+log = "0.4.17"
+

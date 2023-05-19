@@ -1,10 +1,9 @@
 [workspace]
 members = [
   "redir",
-  "models",
   "server",
   "database",
-  "auth",
-  "config"
+  "config",
+  "proc"
 ]
 
